@@ -116,11 +116,17 @@
             border: 0;
         }
 
+        #shopBanner {
+            transition: 0.5s;
+        }
+
         /* #allbtn:after {
             content: "\F137";
             font-family: bootstrap-icons !important;
             font-size: 100px;
+
         }
+
         #allbtn:hover:after {
             content: "\F121";
         } */
@@ -132,37 +138,37 @@
         <div class="swiper container rel">
             <div class="swiper-wrapper">
                 <!-- 여긴안돼 -->
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="red">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/http://cdn.011st.com/ds/2023/11/07/1664/a5214360bcc77ec50d7441d348a91269.jpg">
                     </a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="yellow">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/7/2311071753419300146_705.jpg">
                     </a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="green">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/10/31/2310311333251001151_306.jpg">
                     </a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="orange">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/6/2311061358583401151_633.jpg">
                     </a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="pink">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/browsing/space/banner/2023/11/8/2311081341328500146_709.jpg">
                     </a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-color="black">
                     <a href="">
                         <img
                             src="https://cdn.011st.com/11dims/resize/1240x400/quality/100/11src/http://cdn.011st.com/ds/2023/11/07/1664/b1d972a164b918d5a6b3cc3d218f8105.jpg">
@@ -188,6 +194,7 @@
     </div>
 
     <script>
+        var bgdata = "";
         var swiperShop = new Swiper('#shopBanner .swiper', {
             loop: true,
             effect: 'fade',
@@ -208,16 +215,17 @@
         });
 
         swiperShop.on('slideChange', function () {
-            console.log('slide changed');
-            //스와이퍼가 진행한 후 콘솔 창 확인하여 시점이해하기
-            //배경색을 바꾸기 위해 #shopBanner의 클래스로 제어하기
+            console.log(swiperShop.slides[this.realIndex].dataset.color, this)
+            bgdata = swiperShop.slides[this.realIndex].dataset.color;
+            document.querySelector("#shopBanner").style.backgroundColor = bgdata;
         });
 
         var togglestatu = true; // var로 변수선언을 해줄것 다른 스코프에서 쓰일 예정이므로
 
         document.querySelector(".toggle").addEventListener("click", function () {
 
-            this.classList.toggle('stop'); // this가 태그객체임이 확인되어 그대로 클래스를 주었다가 빼았다가 함
+            this.classList.toggle('stop');
+            // this가 태그객체임이 확인되어 그대로 클래스를 주었다가 빼았다가 함
 
             togglestatu = this.classList.contains('stop');
             // 클래스명이 포함되어 있으면 true, 아니면 false
