@@ -1,0 +1,144 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap'); */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+
+    /* line-height: 1; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.rel {
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+.p-unset {
+    position: unset !important;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+/* 
+.btns * {
+    font-size: 1rem !important;
+} */
+
+
+.btns {
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    padding: 1rem;
+    margin: 1rem;
+    /* transform: translateY(15%); */
+    transform: translate3d('30%', '15%', '0%');
+    /* transform: translate3d(30%, 15%, 0%); */
+}
+
+.swiper-button-prev::after {
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+
+    /* 폰트패밀리는 스와이퍼가 아닌 부트스트랩 선적용하겠다 */
+}
+
+.swiper-button-next::after {
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+
+}
+
+.btnbox {
+    padding: 0.7rem;
+    margin: 0 0 0 1.3rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* border: 1px solid blue; */
+    border-radius: 2rem;
+    /* z-index: 100000; */
+    /* width: 2rem; */
+    /* height: 1rem; */
+
+
+
+}
+
+.swiper-pagination {
+    content: \F64D;
+    font-family: bootstrap-icons !important;
+    color: rgb(255, 255, 255);
+
+
+}
+
+.btnbox a {
+    color: white;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+
+}
+
+
+/* 
+.swiper-slide {
+    
+} */
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.bi {
+    color: white;
+    font-size: 1rem;
+}
+
+/* 
+#shopBanner .btns *,
+#shopBanner .btns *:after {
+    font-size: 1rem !important;
+    line-height: 1;
+} */
+
+#swiper-button-prev {
+    font-size: 5rem !important;
+}
+
+.toggle button::after {
+    content: \F4C4;
+    font-family: bootstrap-icons !important;
+    /* font-size: 200px; */
+}
+
+.toggle.stop button::after {
+    content: '\F593';
+}
